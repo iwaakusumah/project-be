@@ -19,7 +19,7 @@ exports.addPromo = async (req, res) => {
         subTitle,
         bonus,
         price,
-        image
+        image,
     });
     res.json(newPromo);
   } catch (error) {

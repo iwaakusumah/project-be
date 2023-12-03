@@ -19,7 +19,7 @@ exports.addBooking = async (req, res) => {
         email,
         telepon,
         dateAt,
-        totalPrice
+        totalPrice,
     });
     res.json(newBooking);
   } catch (error) {
