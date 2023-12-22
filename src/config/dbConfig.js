@@ -11,13 +11,14 @@ const sequelize = new Sequelize(
     port: process.env.DATABASE_PORT,
 });
 
-(async () => {
-    try {
-      await sequelize.authenticate();
-      console.log("Connection has been established successfully.");
-    } catch (err) {
-      console.error("Failed to connect to the MySQL database.", err);
-    }
-  })();
+async function connectToDatabase() {
+  try {
+    await sequelize.authenticate();
+    console.log("Connection has been established successfully.");
+  } catch (err) {
+    console.error("Failed to connect to the MySQL database.", err);
+  }
+}
 
+connectToDatabase();
 module.exports = sequelize;
