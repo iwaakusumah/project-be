@@ -1,22 +1,24 @@
 const express = require('express');
 const cors = require('cors');
+const bookingRoute = require('./src/routes/bookingRoute');
+const destinationRoute = require('./src/routes/destinationRoute');
+const promoRoute = require('./src/routes/promoRoute');
+
 require('dotenv').config()
 
 const app = express();
-const PORT = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 
-const booking = require('./src/routes/booking');
-const destination = require('./src/routes/destination');
-const promo = require('./src/routes/promo');
-const database = require('./src/config/dbConfig');
-const sequelize = require('./src/config/dbConfig');
-
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
-app.use('/booking', booking);
-app.use('/destination', destination);
-app.use('/promo', promo);
+app.use('/', bookingRoute);
+app.use('/', destinationRoute);
+app.use('/', promoRoute);
+
+app.get('/', (req, res) => {
+  res.send('<h1>Halo, Selamat Datang!</h1>');
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port:${PORT}`);
