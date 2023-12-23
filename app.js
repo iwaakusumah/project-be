@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const bookingRoute = require('./src/routes/bookingRoute');
-const destinationRoute = require('./src/routes/destinationRoute');
-const promoRoute = require('./src/routes/promoRoute');
+const bookingRoute = require('./src/routes/booking');
+const destinationRoute = require('./src/routes/destination');
+const promoRoute = require('./src/routes/promo');
 
 require('dotenv').config()
 
