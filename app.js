@@ -12,9 +12,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-app.use('/', bookingRoute);
-app.use('/', destinationRoute);
-app.use('/', promoRoute);
+app.use('/', booking);
+app.use('/', destination);
+app.use('/', promo);
 
 app.get('/', (req, res) => {
   res.send('<h1>Halo, Selamat Datang!</h1>');
